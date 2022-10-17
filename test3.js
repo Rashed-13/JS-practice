@@ -1,12 +1,10 @@
-const person = {
-  name: "rashed",
-  age : 32,
-  fullName : function(){
-    return this.name + this.age;
-  }
+// constructor function
+
+
+function Person(first, last, age, eye, hobbe) {
+  this.fName = first;
+  this.lName = last;
+  this.age = age;
+  this.eyeColor = eye;
+  this.hobby = hobbe;
 }
-person.fullName = person.fullName.toString();
-const a = JSON.stringify(person);
-
-
-console.log(a);
