@@ -1,44 +1,43 @@
-// JavaScript set and Map 
+// JS build-in call, apply and bind methods
 
-let nam = new Set(["rashed", "Jasmin", "Raisa"]);
-
-
-for(let val in nam.values()){
-    console.log(val);
+const person = {
+    fullName : function(age, hobby){
+        return this.fname + " " + this.lname + " age " + age + " hobby " + hobby;
+    }
 }
 
-// JavaScript  Map 
+const person1 = {
+    fname : "rashed",
+    lname : "Khan"
+}
 
-// const fruits = new Map([
-//     ["apples", 500],
-//     ["oranges", 200],
-//     ["bananas", 300],
-//     ["mango", 250]
-//   ]);
-
-//   //adding property by set methods
-
-//   fruits.set("guava", 100);
-
-// console.log(fruits);
+const person2 = {
+    fname : "Jasmin",
+    lname : "Ara"
+}
 
 
+function nn(){
+    console.log(person.fullName.call(person2, 32, "Codding"));
+}
 
-// Create Objects
-const apples = {name: 'Apples'};
-const bananas = {name: 'Bananas'};
-const oranges = {name: 'Oranges'};
-
-// Create a Map
-const fruits = new Map();
-
-// Add new Elements to the Map
-fruits.set(apples, 500); // equal fruits.set({apples, 500} : 500)
-fruits.set(bananas, 300);
-fruits.set(oranges, 200);
-
-
-console.log(fruits.get(apples));  // for this reason we have to access like this
+setTimeout(nn, 2000);
 
 
 
+let a = [22, "Palying"];
+console.log(person.fullName.apply(person2, a));
+
+
+
+const person3= {
+    firstName:"John",
+    lastName: "Doe",
+    display: function () {
+      let x = document.getElementById("demo");
+      x.innerHTML = this.firstName + " " + this.lastName;
+    }
+  }
+  
+  let display = person3.display.bind(person3);
+  setTimeout(display, 3000);
