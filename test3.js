@@ -1,15 +1,29 @@
-// JS closer
+// Js class practice
 
-let a = (function(){
-    let number = 0;
-    return ()=>{
-        console.log(number++);
+class Car{
+    constructor(name){
+        this.name = name;
     }
-})();
+   static showName() {
+        console.log(this.name);
+   }
+}
+
+class Car2 extends Car{
+    constructor(name, model){
+        super(name);
+        this.model = model;
+    }
+
+    carDetails(){
+        console.log(this.name + " " + this.model)
+    }
+
+}
 
 
-a();
-a();
-a();
-a();
 
+let car3 = new Car2("Audi", "max2022");
+
+car3.carDetails();
+Car2.showName()
