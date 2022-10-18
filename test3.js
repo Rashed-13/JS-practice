@@ -1,43 +1,15 @@
-// JS build-in call, apply and bind methods
+// JS closer
 
-const person = {
-    fullName : function(age, hobby){
-        return this.fname + " " + this.lname + " age " + age + " hobby " + hobby;
+let a = (function(){
+    let number = 0;
+    return ()=>{
+        console.log(number++);
     }
-}
-
-const person1 = {
-    fname : "rashed",
-    lname : "Khan"
-}
-
-const person2 = {
-    fname : "Jasmin",
-    lname : "Ara"
-}
+})();
 
 
-function nn(){
-    console.log(person.fullName.call(person2, 32, "Codding"));
-}
+a();
+a();
+a();
+a();
 
-setTimeout(nn, 2000);
-
-
-
-let a = [22, "Palying"];
-console.log(person.fullName.apply(person2, a));
-
-
-
-const person3= {
-    firstName:"John",
-    lastName: "Doe",
-    display: function () {
-      let x = document.getElementById("demo");
-      x.innerHTML = this.firstName + " " + this.lastName;
-    }
-  }
-  
-  let display = person3.display.bind(person3);
-  setTimeout(display, 3000);
