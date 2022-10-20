@@ -1,4 +1,4 @@
-// JS HTML DOM Practice
+//JS HTML DOM Practice
 
 
 function aminata(){
@@ -18,7 +18,7 @@ function aminata(){
         }
     }
 }
-// aminata(); 
+aminata(); 
 
 
 function myfunc(){
@@ -77,6 +77,4 @@ let inbefor = document.getElementById("p1");
 cont.insertBefore(p, allp[1]);
 
 console.log(allp);
-
-
 
