@@ -1,27 +1,22 @@
-//JS web worker API practice
+//JS Fetch API Practice
+document.getElementById("btn").addEventListener("click", function(){
 
-document.getElementById("sw").addEventListener("click", ()=>{
+fetch("http://127.0.0.1:5500/text.txt")
+    .then(val=>val.text())
+    .then(val => document.getElementById("demo").innerHTML = val)
 
-    if(typeof(Worker) !== undefined){
-        w = new Worker("test.js");
-    }
-    w.onmessage = function(vel){
-        document.getElementById("demo").innerHTML = vel.data;
-    }
 
 })
 
-document.getElementById("stpw").addEventListener("click", ()=>{
+//JS Fetch API Practice by async await
 
-})
+async function fetchData(){
+    const res = await fetch("http://127.0.0.1:5500/text.txt");
+    const data = await res.text();
+    document.getElementById("demo").innerHTML = data;
 
-document.getElementById("nt").addEventListener("click", ()=>{
+}
 
-})
-
-
-
-
-setTimeout(()=>{ document.getElementById("demo").innerHTML = "hello";}, 2000);
+document.getElementById("btn").addEventListener("click", fetchData)
 
 
