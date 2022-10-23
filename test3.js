@@ -1,58 +1,27 @@
-//JS Local storage API practice
+//JS web worker API practice
 
-function setSession(){
-    localStorage.setItem("name","Rashed");
-}
+document.getElementById("sw").addEventListener("click", ()=>{
 
-function getSession(){
-    localStorage.setItem("age","32");
-}
+    if(typeof(Worker) !== undefined){
+        w = new Worker("test.js");
+    }
+    w.onmessage = function(vel){
+        document.getElementById("demo").innerHTML = vel.data;
+    }
 
-function removeItem(){
-    localStorage.removeItem("name");
-}
+})
 
-function cleareLocalStorage(){
-    localStorage.clear();
-}
+document.getElementById("stpw").addEventListener("click", ()=>{
 
-function getSessionKey(){
-    localStorage.key(0);
-}
+})
 
-function getTotalSession(){
-    localStorage.length;
-}
+document.getElementById("nt").addEventListener("click", ()=>{
 
-//JS session storage API practice
-
-
-function setLocal(){
-    localStorage.setItem("name","Rashed");
-}
-
-function getLocal(){
-    localStorage.setItem("age","32");
-}
-
-function removeItem(){
-    localStorage.removeItem("name");
-}
-
-function cleareLocalStorage(){
-    localStorage.clear();
-}
-
-function getLocalKey(){
-    localStorage.key(0);
-}
-
-function getTotalSession(){
-    localStorage.length;
-}
+})
 
 
 
 
+setTimeout(()=>{ document.getElementById("demo").innerHTML = "hello";}, 2000);
 
 
