@@ -1,66 +1,53 @@
-//JS Ajax Practice call back formate
+//JS Ajax Practice with call back and promise formate
+function sentRequest(method, url, data = null){
+  const promise = new Promise((resolve, reject)=>{
+    const xhr = new XMLHttpRequest();
 
-
-const displayer = document.getElementById("demo");
-
-document.getElementById("btn").addEventListener("click", function(){
-
-  function getData(url, cFunction){
-  const xhr = new XMLHttpRequest();
-
-  xhr.onload = function(){
-  cFunction(xhr.response);
-  console.log(xhr.getAllResponseHeaders());
-  }
-
-  xhr.open("GET", url);
-  xhr.send();
-  }
+    xhr.onload = function(){
+      resolve(xhr.response);
+    }
+    xhr.onerror = function(){
+      reject("Hay, there is an error");
+    }
   
-getData("./text.txt", cb);
+    xhr.open(method, url);
+    xhr.responseType = "json";
 
-})
-
-function cb(xhr){
-  console.log(xhr);
+    if(method === "GET"){
+      xhr.send();
+    }else if(method === "POST"){
+      xhr.send(data);
+    }
+  })
+  return promise;
+  
 }
 
-// Normal Formate of ajax
+
+function getData(){
+  sentRequest("GET", "https://jsonplaceholder.typicode.com/posts").then(res => {
+    console.log("I am from sent data");
+    console.log(res);
+  }).catch(err =>{
+    console.log(err);
+  })
+}
 
 
-document.getElementById("btn").addEventListener("click", function(){
-  const xhr = new XMLHttpRequest();
-  xhr.onload = function(){
-     displayer.innerHTML = this.response;
-  }
-  xhr.open("GET", "./text.txt");
-  xhr.setRequestHeader("favgame", "Chesh");
+function sentData(){
+  sentRequest("POST", "https://jsonplaceholder.typicode.com/posts", JSON.stringify({
+    title: 'Rashed',
+    body: 'Khan',
+    userId: 1,
+  })).then( res=> {
+    console.log("I am from get data");
+    console.log(res.id);
+  });
 
-  xhr.send();
+}
 
-})
+const getButton = document.getElementById("getData");
+const sentButton = document.getElementById("sentData");
 
-
-document.getElementById("btn").addEventListener("click", function(){
-  const xhr = new XMLHttpRequest();
-
-  xhr.onreadystatechange = function(){
-      if(xhr.readyState == 1){
-        console.log("Connection Stublished");
-      }else if(xhr.readyState == 2){
-        console.log("Request Received");
-      }else if(xhr.readyState == 3){
-        console.log("Data Processing");
-      }else if(xhr.readyState == 4){
-        console.log("Data ready");
-        displayer.innerHTML = xhr.responseText;
-      }
-      
-     }
-
-    xhr.open("GET", "./text.txt");
-    xhr.send();
-})
-
-
-   
+getButton.addEventListener("click", getData);
+sentButton.addEventListener("click", sentData);
