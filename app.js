@@ -1,53 +1,58 @@
-//JS Ajax Practice with call back and promise formate
-function sentRequest(method, url, data = null){
-  const promise = new Promise((resolve, reject)=>{
-    const xhr = new XMLHttpRequest();
+//  DOM manipulation practice
 
-    xhr.onload = function(){
-      resolve(xhr.response);
-    }
-    xhr.onerror = function(){
-      reject("Hay, there is an error");
-    }
-  
-    xhr.open(method, url);
-    xhr.responseType = "json";
+//<link rel="stylesheet" href="style.css">
+// document.getElementById("style").addEventListener("click", ()=>{
+//     const style = document.createElement("link");
+//     style.setAttribute("rel", "stylesheet");
+//     style.setAttribute("href","./style.css");
 
-    if(method === "GET"){
-      xhr.send();
-    }else if(method === "POST"){
-      xhr.send(data);
-    }
-  })
-  return promise;
-  
-}
+//     document.head.appendChild(style);
+   
+
+// })
 
 
-function getData(){
-  sentRequest("GET", "https://jsonplaceholder.typicode.com/posts").then(res => {
-    console.log("I am from sent data");
-    console.log(res);
-  }).catch(err =>{
-    console.log(err);
-  })
-}
+
+// document.getElementById('addHeading').addEventListener("click", ()=>{
+
+//     const head = document.createElement("h1");
+//     head.innerHTML = "DOM manipulation";
+//     head.setAttribute("class", "hedaing");
+//     const body = document.body;
+//     const heding = document.body.getElementsByTagName("h1")[0];
+
+//     body.insertBefore(head, heding);
+
+// })
 
 
-function sentData(){
-  sentRequest("POST", "https://jsonplaceholder.typicode.com/posts", JSON.stringify({
-    title: 'Rashed',
-    body: 'Khan',
-    userId: 1,
-  })).then( res=> {
-    console.log("I am from get data");
-    console.log(res.id);
-  });
+// //<script src="app.js"></script>
+// document.getElementById("script").addEventListener("click", function(){
+//     const script = document.createElement("script");
+//     script.src = "./test.js";
+//     document.body.appendChild(script);
+    
+// })
 
-}
+document.getElementById("style").addEventListener("click", ()=>{
+     const link = document.head.getElementsByTagName("link");
+     const length = link.length;
+     let allLink = "";
 
-const getButton = document.getElementById("getData");
-const sentButton = document.getElementById("sentData");
+     for(let i = 0; i< length;  i++){
+        allLink+=link[i].href+ "\n";
+     }
 
-getButton.addEventListener("click", getData);
-sentButton.addEventListener("click", sentData);
+     let a = allLink.search("styleMe.css");
+     console.log(allLink);
+     if(a == -1){
+      const style = document.createElement("link");
+      // style.setAttribute("rel", "stylesheet");
+      style.setAttribute("href","./styleMe.css");
+      document.head.appendChild(style);
+
+     }else{
+      alert("This file is exist")
+     }
+
+})

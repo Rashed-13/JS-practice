@@ -1,0 +1,7 @@
+#hedaing,
+.hedaing{
+    color: red;
+    border: 2px solid #ddd;
+    padding: 20px 25px;
+    text-align: center;
+}
