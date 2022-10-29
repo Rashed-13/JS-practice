@@ -1,24 +1,66 @@
-h2:hover{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#shoppintContainer{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+#singleProduct{
+    width: 250px;
+    height: auto;
+   border: 1px solid #ddd;
+    padding: 10px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.productImage{
+    width: 100%;
+    height: auto;
+}
+
+.productTitle, .price{
+    margin: 10px 0px;
+}
+
+.addTocadr, .removeFromCard{
+    padding: 5px 15px;
+    border: none;
+    transition: .2s;
+}
+
+.addTocadr:hover{
     cursor: pointer;
+    background-color: rgb(160, 158, 158);
+    color: #fff;
 }
 
-#cardContainer{
-    width: 600px;
-    min-height: 250px;
-    border: 2px solid #ddd;
-    margin-left: 30px;
-}
-#headi{
-    padding: 0px 10px;
+.removeFromCard:hover{
+    cursor: pointer;
+    background-color: rgb(160, 158, 158);
+    color: #fff;
 }
 
-.cardItemStyle{
-    border-bottom: 1px solid #ddd;
-    padding-left: 10px;
+.hide{
+    display: none;
 }
 
-.spanStyle{
-    border: 1px solid rgb(83, 83, 83);
-    padding: 2px 20px;
-    margin-left: 400px;
+#card{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#cardHeading{
+    margin-bottom: 20px;
+    display: block;
+}
+
+#demo{
+    width: 250px;
+    height: auto;
 }

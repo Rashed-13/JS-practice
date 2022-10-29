@@ -4,29 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM manipulation practice</title>
+    <title>MOD manipulation practice small add to card Modified project</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
  <body>
-<h2 onclick="addToCard(this)">Product 1</h2>
-<h2 onclick="addToCard(this)">Product 2</h2>
-<h2 onclick="addToCard(this)">Product 3</h2>
-<h2 onclick="addToCard(this)">Product 4</h2>
-<h2 onclick="addToCard(this)">Product 5</h2>
-<h2 onclick="addToCard(this)">Product 6</h2>
+
+    <div id="shoppintContainer">
+        <div id="singleProduct">
+            <img class="productImage" src="https://static-01.daraz.com.bd/p/a964c052013270b6aa3c4a1c0870aca0.jpg" alt="">
+            <h3 class="productTitle">Hot Singing Snickers Dusty High Quality Snow Men's Casual</h3>
+            <p class="price">500</p>
+            <button class="addTocadr" onclick="addToCard(this)">add to card</button>
+            <button class="removeFromCard hide" onclick="removeFromCard(this)">Remove</button>
+        </div>
+        <div id="singleProduct">
+            <img class="productImage" src="https://static-01.daraz.com.bd/p/c5a37c3b592fd860525b1133feff5e74.jpg" alt="">
+            <h3 class="productTitle">Hot Singing Snickers Dusty High Quality Snow Men's Casual</h3>
+            <p class="price">500</p>
+            <button class="addTocadr" onclick="addToCard(this)">add to card</button>
+            <button class="removeFromCard hide" onclick="removeFromCard(this)">Remove</button>
+        </div>
+        <div id="singleProduct">
+            <img class="productImage" src="https://static-01.daraz.com.bd/p/eb6308075f420efb8f9c848ae83eb4c8.jpg" alt="">
+            <h3 class="productTitle">Hot Singing Snickers Dusty High Quality Snow Men's Casual</h3>
+            <p class="price">500</p>
+            <button class="addTocadr" onclick="addToCard(this)">add to card</button>
+            <button class="removeFromCard hide" onclick="removeFromCard(this)">Remove</button>
+        </div>
+        <div id="singleProduct">
+            <img class="productImage" src="https://static-01.daraz.com.bd/p/8a89dcb8ec47037ab3692467e06cc870.jpg" alt="">
+            <h3 class="productTitle">Hot Singing Snickers Dusty High Quality Snow Men's Casual</h3>
+            <p class="price">500</p>
+            <button class="addTocadr" onclick="addToCard(this)">add to card</button>
+            <button class="removeFromCard hide" onclick="removeFromCard(this)">Remove</button>
+        </div>
+        <div id="singleProduct">
+            <img class="productImage" src="https://static-01.daraz.com.bd/p/3f365c4e5d1e3676e4a33219da8c81a2.jpg" alt="">
+            <h3 class="productTitle">Hot Singing Snickers Dusty High Quality Snow Men's Casual</h3>
+            <p class="price">500</p>
+            <button class="addTocadr" onclick="addToCard(this)">add to card</button>
+            <button class="removeFromCard hide" onclick="removeFromCard(this)">Remove</button>
+        </div>
+        <div id="singleProduct">
+            <img class="productImage" src="https://static-01.daraz.com.bd/p/b85ee273de0f0077514eda8ec928e67c.jpg" alt="">
+            <h3 class="productTitle">Hot Singing Snickers Dusty High Quality Snow Men's Casual</h3>
+            <p class="price">500</p>
+            <button class="addTocadr" onclick="addToCard(this)">add to card</button>
+            <button class="removeFromCard hide" onclick="removeFromCard(this)">Remove</button>
+        </div>
+    </div>
 
 
 
-  <div id="cardContainer">
-    <h3 id="headi">Your product will add here</h3> <hr>
 
-  </div>
-
-  
-
-
-
+    <div id="card">
+        <h2 id="cardHeading">All product will add here</h2> <hr>
+    </div>
 
 
 <script src="app.js"></script>
