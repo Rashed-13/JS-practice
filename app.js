@@ -14,9 +14,8 @@ document.getElementById("addHeading").addEventListener("click", function(){
 
 document.getElementById("remove").addEventListener("click", ()=>{
 
-const element =  document.body.getElementsByTagName("h2");
+const element =  document.body.getElementsByClassName("h2");
 const length = element.length -1;
-
 
  // remove one by one
 
@@ -33,4 +32,16 @@ if(element.length != 0){
 //    element[i].remove();
 // }
 
+})
+
+
+document.getElementById("removeAll").addEventListener("click", ()=>{
+   const element =  document.body.getElementsByClassName("h2");
+   const length = element.length - 1;
+
+   // bellow code will all remove togather
+   
+   for(let i = length; i >= 0; i--){
+      element[i].remove();
+   }
 })
