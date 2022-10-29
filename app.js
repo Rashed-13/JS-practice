@@ -1,58 +1,36 @@
-//  DOM manipulation practice
+// MOD manipulation practice with creat delete all/one by one 
 
-//<link rel="stylesheet" href="style.css">
-// document.getElementById("style").addEventListener("click", ()=>{
-//     const style = document.createElement("link");
-//     style.setAttribute("rel", "stylesheet");
-//     style.setAttribute("href","./style.css");
+document.getElementById("addHeading").addEventListener("click", function(){
+   const element = document.createElement("h2");
+   const contentt =  document.createTextNode("Hello");
+   element.appendChild(contentt);
 
-//     document.head.appendChild(style);
-   
+   const bod = document. body;
+   const id1 = document.getElementById("id1");
 
-// })
-
-
-
-// document.getElementById('addHeading').addEventListener("click", ()=>{
-
-//     const head = document.createElement("h1");
-//     head.innerHTML = "DOM manipulation";
-//     head.setAttribute("class", "hedaing");
-//     const body = document.body;
-//     const heding = document.body.getElementsByTagName("h1")[0];
-
-//     body.insertBefore(head, heding);
-
-// })
+   bod.insertBefore(element, id1)
+})
 
 
-// //<script src="app.js"></script>
-// document.getElementById("script").addEventListener("click", function(){
-//     const script = document.createElement("script");
-//     script.src = "./test.js";
-//     document.body.appendChild(script);
-    
-// })
+document.getElementById("remove").addEventListener("click", ()=>{
 
-document.getElementById("style").addEventListener("click", ()=>{
-     const link = document.head.getElementsByTagName("link");
-     const length = link.length;
-     let allLink = "";
+const element =  document.body.getElementsByTagName("h2");
+const length = element.length -1;
 
-     for(let i = 0; i< length;  i++){
-        allLink+=link[i].href+ "\n";
-     }
 
-     let a = allLink.search("styleMe.css");
-     console.log(allLink);
-     if(a == -1){
-      const style = document.createElement("link");
-      // style.setAttribute("rel", "stylesheet");
-      style.setAttribute("href","./styleMe.css");
-      document.head.appendChild(style);
+ // remove one by one
 
-     }else{
-      alert("This file is exist")
-     }
+if(element.length != 0){
+   element[length].remove(); 
+}else{
+   alert("There is no element remined");
+}
+
+
+// bellow code will all remove togather
+
+// for(let i = length; i >= 0; i--){
+//    element[i].remove();
+// }
 
 })
