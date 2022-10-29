@@ -1,7 +1,24 @@
-#hedaing,
-.hedaing{
-    color: red;
+h2:hover{
+    cursor: pointer;
+}
+
+#cardContainer{
+    width: 600px;
+    min-height: 250px;
     border: 2px solid #ddd;
-    padding: 20px 25px;
-    text-align: center;
+    margin-left: 30px;
+}
+#headi{
+    padding: 0px 10px;
+}
+
+.cardItemStyle{
+    border-bottom: 1px solid #ddd;
+    padding-left: 10px;
+}
+
+.spanStyle{
+    border: 1px solid rgb(83, 83, 83);
+    padding: 2px 20px;
+    margin-left: 400px;
 }

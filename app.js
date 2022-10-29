@@ -1,47 +1,43 @@
-// MOD manipulation practice with creat delete all/one by one 
+// MOD manipulation practice small add to card project
 
-document.getElementById("addHeading").addEventListener("click", function(){
-   const element = document.createElement("h2");
-   const contentt =  document.createTextNode("Hello");
-   element.appendChild(contentt);
+function addToCard(item){
 
-   const bod = document. body;
-   const id1 = document.getElementById("id1");
+   const cardContainer  = document.getElementById("cardContainer");
+   let newItem = item.cloneNode(true);
+   newItem.classList.add("cardItemStyle");
+   newItem.removeAttribute("onclick");
 
-   bod.insertBefore(element, id1)
-})
+   // Adding span into item
+   let span = document.createElement("span");
+   span.innerHTML = "-";
+   span.classList.add("spanStyle");
+   span.setAttribute("onclick", "removeItem(this)");
 
+   newItem.appendChild(span);
 
-document.getElementById("remove").addEventListener("click", ()=>{
-
-const element =  document.body.getElementsByClassName("h2");
-const length = element.length -1;
-
- // remove one by one
-
-if(element.length != 0){
-   element[length].remove(); 
-}else{
-   alert("There is no element remined");
+   cardContainer.appendChild(newItem);
+   console.log(newItem);
 }
 
 
-// bellow code will all remove togather
 
-// for(let i = length; i >= 0; i--){
-//    element[i].remove();
+
+function removeItem(item){
+   item.parentElement.remove();
+   console.log(item.parentElement);
+}
+
+
+// function checkSpan(){
+//    let span = document.createElement("span");
+//    span.innerHTML = "-";
+//    span.classList.add("spanStyle");
+//    span.setAttribute("onclick", "removeItem(this)");
+//    console.log(span);
 // }
 
-})
+
+// checkSpan();
 
 
-document.getElementById("removeAll").addEventListener("click", ()=>{
-   const element =  document.body.getElementsByClassName("h2");
-   const length = element.length - 1;
-
-   // bellow code will all remove togather
-   
-   for(let i = length; i >= 0; i--){
-      element[i].remove();
-   }
-})
+console.log(document.title);
