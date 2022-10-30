@@ -3,64 +3,103 @@
     padding: 0;
     box-sizing: border-box;
 }
-#shoppintContainer{
-    width: 100%;
+.app-container{
+    width: 75%;
     height: auto;
-    padding: 10px;
+    background-color: antiquewhite;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#singleProduct{
-    width: 250px;
+img.logo{
+    width: 100px;
     height: auto;
-   border: 1px solid #ddd;
-    padding: 10px;
+}
+
+h2.title{
+    margin: 20px 0px;
+}
+
+.add-task-area{
+    background-color: #fff;
+    width: 85%;
+    padding: 20px 35px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-title{
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 15px;
-}
-.productImage{
-    width: 100%;
-    height: auto;
+    margin-right: 10px;
 }
 
-.productTitle, .price{
-    margin: 10px 0px;
+.task-input{
+    margin-right: 20px;
+    width: 280px;
+    padding: 5px;
 }
-
-.addTocadr, .removeFromCard{
-    padding: 5px 15px;
+.submit{
     border: none;
-    transition: .2s;
+    padding: 5px 15px;
+    transition: .3s;
 }
 
-.addTocadr:hover{
+.submit:hover{
     cursor: pointer;
-    background-color: rgb(160, 158, 158);
-    color: #fff;
+    background-color: rgb(181, 182, 182);
+}
+.task-area{
+    margin-top: 10px;
+    background-color: #fff;
+    width: 85%;
+    padding: 20px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.removeFromCard:hover{
+.incompleted-task{
+    width: 45%;
+    
+}
+.checkbox{
+    margin-right: 30px;
+}
+.incomplate-task-heading{
+margin-bottom: 15px;
+}
+.completed-task{
+    width: 45%;
+}
+.complated-task-heading{
+    margin-bottom: 15px;
+}
+
+.single-task, .completed-single-task{
+    background-color: aliceblue;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.delete{
+    background-color: rgb(255, 63, 63);
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    margin-left: 50px;
+    transition: .3s;
+}
+.delete:hover{
+    background-color: red;
     cursor: pointer;
-    background-color: rgb(160, 158, 158);
-    color: #fff;
-}
-
-.hide{
-    display: none;
-}
-
-#card{
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-#cardHeading{
-    margin-bottom: 20px;
-    display: block;
-}
-
-#demo{
-    width: 250px;
-    height: auto;
 }
