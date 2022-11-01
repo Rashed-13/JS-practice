@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOD Manipulation practice To Do App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
- <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sumit Saha, Learn with Sumit" />
+    <meta name="description" content="We love JavaScript" />
+    <title>DOM - Document Object Model</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Learn with Sumit" />
+      </div>
+      <h1 id="header" class="header">To-Do App</h1>
+
+      <form class="new-task-container box">
+        <label for="new-task">Add New Task</label>
+        <input type="text" id="new-task" />
+        <input type="submit" id="addTask" value="Add Task" />
+      </form>
+
+      <div class="todo-list box">
+        <h2>Incomplete Tasks</h2>
+        <ul id="items">
+          <li class="item">
+            <input type="checkbox" /><label>Task Name</label>
+          </li>
+          <li class="item">
+            <input type="checkbox" /><label>Task Name</label>
+          </li>
+          <li class="item">
+            <input type="checkbox" /><label>Task Name</label>
+          </li>
+        </ul>
+      </div>
+      <!--/todo-list-->
+
+      <div class="complete-list box">
+        <h2>Completed Tasks</h2>
+        <ul>
+          <li class="item">Task Name <button class="delete">Delete</button></li>
+        </ul>
+      </div>
+      <!--/complete-list-->
+    </section>
+    <!--/container-->
+
+    <h2 id="heading">I love coding</h2>
 
 
-<div class="app-container">
-    <img class="logo" src="https://assets.materialup.com/uploads/66f90e03-d02a-4975-b66b-6ff73ff8923a/preview" alt="">
-    <h2 class="title">To DO App</h2>
-    <div class="add-task-area">
-        <p class="task-title">Add New Task</p>
-        <input id="input-task" class="task-input"  type="text">
-        <input id="add-task" class="submit" type="submit" value="Add Task">
-    </div>
-    <div class="task-area">
-        <div class="incompleted-task">
-            <h2 class="incomplate-task-heading">Complete Task</h2><hr>
-            <!-- <div class="single-task">
-                <input class="checkbox" type="checkbox" name="cb" onclick="complateTask()">
-                <label for="cb">Task One</label>
-            </div> -->
-        </div>
-        <div class="completed-task">
-            <h2 class="complated-task-heading">Completed Task</h2><hr>
-            <!-- <div class="completed-single-task">
-                <label for="cb">Task Two</label>
-                <button class="delete" onclick="deleteTask(this)">Delete</button>
-            </div> -->
-        </div>
-    </div>
- 
-</div>
-
-
-
-
-<script src="app.js"></script>
-</body>
-
+    <button id="btn">Click me</button>
+    <script src="script.js"></script>
+  </body>
 </html>
