@@ -97,3 +97,22 @@ li {
 .delete:hover{
   cursor: pointer;
 }
+
+
+#done-all{
+  padding: 5px 10px;
+  border: none;
+  margin-top: 5px;
+  background-color: rgb(238, 165, 165);
+  transition: .2s;
+}
+
+#done-all:hover{
+  cursor: pointer;
+  background-color: rgb(233, 64, 64);
+  color: #fff;
+}
+
+.hide-done-button{
+  display: none;
+}
