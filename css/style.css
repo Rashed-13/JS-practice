@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"); */
 
 :root {
   --lightDark: #212936;
@@ -160,11 +160,95 @@ input[type="checkbox"] {
   }
 }
 
+.tab-container{
+  background-color: #052d6d;
+  padding: 20px;
+  display: flex;
+}
+
+.tab-container .tab{
+  background-color: #152031;
+  width: 150px;
+  border-radius: 8px;
+}
+
+.tab-container .tab ul li{
+  list-style: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+} 
+
+.tab-container .tab ul li:hover{
+  background-color: #052d6d;
+  border-radius: 8px;
+}
+.content{
+  width: 450px;
+  height: 200px;
+  background-color: #152031;
+  margin-left: 15px;
+  border-radius: 8px;
+}
+
+.content-wraper{
+  padding: 10px;
+}
+.content-body{
+  margin-top: 15px;
+}
+
+.all-content{
+  height: 0;
+  overflow: hidden;
+}
 
 
-.heading{
+.activeTab{
+  background-color: #052d6d;
+}
+
+.menu-container{
+  margin: 20px 0px 150px 0px;
+}
+.nav{
+  width: 350px;
+  /* margin: auto; */
+  border-radius: 8px;
+  transition: width .5s;
+}
+.nav ul{
+  width: 100%;
   cursor: pointer;
 }
-.red{
-  color: red;
+.nav ul li{
+  list-style: none;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.nav ul li:hover{
+  background-color: #064bb9;
+}
+.nav ul li a{
+  text-decoration: none;
+}
+
+span.icon{
+margin-left: 200px;
+background-color: #35bb78;
+height: 30px;
+width: 30px;
+display: inline;
+}
+
+
+.callContainer{
+  height: 100px;
+  width: 300px;
+  background-color: red;
+  margin-bottom: 100px;
+  transition: 2s;
 }
